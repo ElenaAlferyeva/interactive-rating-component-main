@@ -23,8 +23,12 @@ document.getElementById('submit').addEventListener('click', sayThankYou)
 
 
 function sayThankYou() {
-  document.getElementById("askForRaiting").style.display = 'none';
-  document.getElementById("sayThanks").style.display='flex'
-  document.querySelector('.rate-selected').innerHTML = `You selected ${selectedRaiting} out of 5`
+  if (selectedRaiting == undefined) {
+    document.querySelector('.validation-error').style.display = 'block';
+  } else {
+    document.getElementById("askForRaiting").style.display = 'none';
+    document.getElementById("sayThanks").style.display='flex'
+    document.querySelector('.rate-selected').innerHTML = `You selected ${selectedRaiting} out of 5`
+  }
 }
 

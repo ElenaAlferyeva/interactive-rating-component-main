@@ -25,7 +25,7 @@ body {
     flex-direction: column;
     border-radius: 25px;
     width:400px;
-    height: 410px;
+    min-height: 410px;
     background-color: hsl(213, 19%, 18%);
     padding: 30px;
 }
@@ -135,4 +135,11 @@ li {
 
 .thanks {
     margin-top: 20px;
+}
+
+.validation-error {
+    color: red;
+    padding-left: 10px;
+    padding-top: 10px;
+    display: none;
 }
