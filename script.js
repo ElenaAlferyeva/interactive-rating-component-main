@@ -1,52 +1,18 @@
 let selectedRaiting;
 
-document.getElementById("1").addEventListener('click', select1)
-document.getElementById("2").addEventListener('click', select2)
-document.getElementById("3").addEventListener('click', select3)
-document.getElementById("4").addEventListener('click', select4)
-document.getElementById("5").addEventListener('click', select5)
-
-let array = ["1", "2", "3", "4", ]
-
-function select1() {
-   cleanState()
-    document.getElementById("1").classList.add("selected");
-    selectedRaiting = document.getElementById("1").id;
-  }
-
-  function select2() {
-    cleanState()
-    document.getElementById("2").classList.add("selected");
-    selectedRaiting = document.getElementById("2").id;
-  }
-
-  function select3() {
-    cleanState()
-    document.getElementById("3").classList.add("selected");
-    selectedRaiting = document.getElementById("3").id;
-  }
-
-  function select4() {
-    cleanState()
-    document.getElementById("4").classList.add("selected");
-    selectedRaiting = document.getElementById("4").id;
-  }
-
-  function select5() {
-   cleanState()
-    document.getElementById("5").classList.add("selected");
-    selectedRaiting = document.getElementById("5").id;
-    console.log(selectedRaiting)
-  }
+document.querySelector('.raiting').addEventListener('click', function(e) {
+    if (e.target.tagName === 'LI'){
+        cleanState()
+        document.getElementById(e.target.id).classList.add("selected");
+        selectedRaiting = e.target.id
+        //alert(e.target.id);
+        }
+  });
 
 
-
-
-
-
-  function cleanState() {
-    const rateElements = document.querySelector('.raiting').children;
-    Array.from(rateElements).forEach((el) => {
+function cleanState() {
+  const rateElements = document.querySelector('.raiting').children;
+  Array.from(rateElements).forEach((el) => {
         el.classList.remove('selected')
     })
   }
